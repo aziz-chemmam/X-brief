@@ -16,7 +16,7 @@
                         Sign Up
                     </h1>
                     <div class="w-full flex-1 mt-8">
-                        <form action="" method="POST">
+                        <form action="/register" method="POST">
                             @csrf
                             <div class="mx-auto max-w-xs">
 
@@ -53,15 +53,15 @@
 
                                 <input
                                     class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                                    type="text" placeholder="Email" id= "Email" name="Email" />
-                                <span id="Email" class="text-red-500"></span>
+                                    type="text" placeholder="email" id= "email" name="email" />
+                                <span id="email" class="text-red-500"></span>
 
 
 
                                 <input
                                     class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                                    id= "pw" name="password" type="password" placeholder="Password" />
-                                <span id="pwErr" class="text-red-500"></span>
+                                    id= "password" name="password" type="password" placeholder="Password" />
+                                <span id="password" class="text-red-500"></span>
 
                                 <button type="submit"
                                     class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">

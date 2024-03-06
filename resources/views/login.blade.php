@@ -24,7 +24,7 @@
                         Sign In
                     </h1>
                     <div class="w-full flex-1 mt-8">
-                        <form action="" method="POST" action="/login" >
+                        <form  method="POST" action="/login" >
                             @csrf
                             <div class="mx-auto max-w-xs">
 
