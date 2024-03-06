@@ -45,10 +45,11 @@ class AuthController extends Controller
                 return view('/client.dashboard');
             }else if ($user->role === 'organisateure'){
                 return view('/organizer.dashboard');
-            }else{
-                return redirect('/login');
             }
+               
         }
+        return redirect()->back()->with('success','email or password is incorrect!'); 
+            
     }
     
 }

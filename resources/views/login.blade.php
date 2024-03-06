@@ -19,12 +19,19 @@
                 <div>
                     <p class="text-center text-violet-400 font-bold text-[1.25rem]">MY-TAXI</p>
                 </div>
+                @if (session('success'))
+                <div id="success-message" class="bg-red-600 rounded-md  fixed ml-24 mt-96  top-50 z-50 text-white p-4 text-center animate-bounce mb-4">
+                    {{ session('success') }}
+                </div>
+  
+            
+            @endif
                 <div class="mt-12 flex flex-col items-center">
                     <h1 class="text-2xl xl:text-2xl font-bold">
                         Sign In
                     </h1>
                     <div class="w-full flex-1 mt-8">
-                        <form  method="POST" action="/login" >
+                        <form  method="POST" action="/home" >
                             @csrf
                             <div class="mx-auto max-w-xs">
 
@@ -45,7 +52,7 @@
 
                                 
 
-                                <a href="">
+                                <a href="/register">
                                     <p class="underline text-gray-500 mt-[0.75rem]">Don't have an account ? create One</p>
                                 </a>
                                 <button type="submit"
@@ -55,7 +62,7 @@
                                     </span>
                                 </button>
                                 <span id="formError" class="text-red-500 font-medium mt-[0.75rem]"></span>
-                                <a href="" class="text-center"><p class="underline text-gray-500 mt-[1rem]">Back To Home Page</p> </a>
+                                <a href="/" class="text-center"><p class="underline text-gray-500 mt-[1rem]">Back To Home Page</p> </a>
                             </div>
                         </form>
                     </div>
@@ -65,5 +72,12 @@
         </div>
     </div>
 
+
+    
+    <script>
+        setTimeout(function() {
+            document.getElementById('success-message').style.display = 'none';
+        }, 5000);
+    </script>
 </body>
 </html>
