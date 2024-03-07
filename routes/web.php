@@ -32,7 +32,7 @@ Route::post('/register',[AuthController::class,'create']);
             // login
 Route::get('/login', function () {
     return view('login');
-});
-Route::post('/home',[AuthController::class,'login']);
+})->name('login');
+Route::post('/home',[AuthController::class,'login'])->name('home');
 
 
