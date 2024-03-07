@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnnoncesController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\categoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,5 +52,9 @@ Route::post('/update/{id}', [AnnoncesController::class, 'update']);
 Route::get('/admin',[AuthController::class, 'show']);
 Route::delete('/delete/{id}',[AdminController::class, 'delete'])->name('delete');
 
+
+        //categories
+Route::get('/categories',[categoriesController::class,'index']);
+route::post('/categories',[categoriesController::class,"store"])->name('addCategorie');
 
 
