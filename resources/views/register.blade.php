@@ -12,7 +12,7 @@
                 <img src="{{ asset('image/Evento.png') }}" class="h-36 w-48 ml-[30%] " alt="">
                 </div>
                 <div class=" flex flex-col items-center">
-                    <h1 class="text-2xl xl:text-2xl font-bold">
+                    <h1 class="text-2xl text-indigo-500  xl:text-2xl font-bold">
                         Sign Up
                     </h1>
                     <div class="w-full flex-1 mt-8">

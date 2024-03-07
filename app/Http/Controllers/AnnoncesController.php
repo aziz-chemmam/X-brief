@@ -8,48 +8,35 @@ use Illuminate\Http\Request;
 class AnnoncesController extends Controller
 {
   
-    public function create()
-    {
-        
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+   
     public function store(Request $request)
     {
-        //
+        $annonce = new Annonces();
+        $annonce->userId = auth()->user()->id;
+        $annonce->titre = request('titre');
+        $annonce->description = request('description');
+        $annonce->date = request('date');
+        $annonce->place = request('place');
+        $annonce->lieu = request('lieu');
+        $annonce->categories = request('categories');
+        $annonce->save();
+        return redirect('/annonce');
+
     }
 
-    /**
-     * Display the specified resource.
-     */
+  
     public function show(Annonces $annonces)
     {
-        //
+        $userId = auth()->user()->id;
+        $annonce = annonces::where('userId', $userId)->get();
+        return view('organizer.dashboard', compact('annonce'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Annonces $annonces)
+    public function delete($id)
     {
-        //
+        Annonces::where('id', $id)->delete();
+        return back();
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Annonces $annonces)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Annonces $annonces)
-    {
-        //
-    }
+    
 }

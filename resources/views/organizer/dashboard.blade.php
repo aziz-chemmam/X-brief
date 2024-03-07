@@ -44,11 +44,13 @@
             </div>
 
             <div id="cardContainer" class="flex flex-wrap w-full  gap-4">
+                @foreach ($annonce as $annonces)
 
+               
                 <div class="flex-shrink-0">
                     <div
                         class="bg-white shadow-[0_8px_12px_-6px_rgba(0,0,0,0.2)] border p-2 w-96 h-66 max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-                        <h3 class="text-lg font-semibold"></h3>
+                        <h3 class="text-lg font-semibold">{{ $annonces->titre }}</h3>
                         <p class="mt-2 mb-3 text-sm text-gray-400"></p>
                         <p class="mt-2 mb-2 text-sm text-black"></p>
                         <p class="mt-2 mb-2 text-sm text-black"></p>
@@ -57,7 +59,7 @@
                         <div class="flex ml-10">
                             <a href=""
                                 class="h-9 py-2 px-14 mt-4 w-36 rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-green-900 hover:bg-green-700">Edit</a>
-                            <form method="post" action="">
+                            <form method="post" action="/delete/{{ $annonces->id}}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"
@@ -66,13 +68,13 @@
                         </div>
                     </div>
                 </div>
-
+                @endforeach
             </div>
 
 
             <div id="form"
                 class="absolute w-full h-full inset-0 bg-opacity-50 backdrop-filter backdrop-blur-md flex justify-center items-center scale-0 bg-gray-500 duration-300">
-                <form action="/seller" method="POST" class="absolout mt-0  w-[700px] mx-auto bg-emerald-950  ">
+                <form action="/annonce" method="POST" class="absolout mt-0  w-[700px] mx-auto bg-emerald-950  ">
                     @csrf
 
                     <div class="flex mr-9 mt-5 justify-end">
@@ -104,7 +106,7 @@
                             Lieu d'evenement</label>
                     </div>
                     <div class="relative z-0 w-full mb-5 ml-44 group">
-                        <input type="date" name="prix" id="date"
+                        <input type="date" name="date" id="date"
                             class="block py-2.5 px-0 w-96  text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer"
                             descriptionholder=" " required />
                         <label for="lieu"

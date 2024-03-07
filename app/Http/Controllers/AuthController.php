@@ -44,7 +44,7 @@ class AuthController extends Controller
             }else if($user->role === 'client'){
                 return view('/client.dashboard');
             }else if ($user->role === 'organisateure'){
-                return view('/organizer.dashboard');
+                return redirect('/annonce');
             }
                
         }

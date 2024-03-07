@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnoncesController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,5 +35,12 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 Route::post('/home',[AuthController::class,'login'])->name('home');
+
+
+            // annonce 
+Route::get('/annonce',[AnnoncesController::class, 'show']);
+Route::post('/annonce',[AnnoncesController::class, 'store']);
+Route::delete('/delete/{id}',[AnnoncesController::class,'delete']);
+
 
 
