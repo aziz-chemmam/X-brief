@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnnoncesController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,7 @@ Route::post('/update/{id}', [AnnoncesController::class, 'update']);
 
             //admin
 Route::get('/admin',[AuthController::class, 'show']);
-Route::delete('/delete',[])
+Route::delete('/delete/{id}',[AdminController::class, 'delete'])->name('delete');
+
 
 
