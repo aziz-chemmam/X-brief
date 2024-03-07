@@ -39,10 +39,15 @@ Route::get('/hello', [AuthController::class, 'logout'])->name('logout');
 
 
             // annonce 
-Route::get('/annonce',[AnnoncesController::class, 'show']);
-Route::post('/annonce',[AnnoncesController::class, 'store']);
+Route::get('/organisateur',[AnnoncesController::class, 'show']);
+Route::post('/organisateur',[AnnoncesController::class, 'store']);
 Route::delete('/delete/{id}',[AnnoncesController::class,'delete']);
 Route::get('/edit/{id}', [AnnoncesController::class,'edit'])->name('edit');
 Route::post('/update/{id}', [AnnoncesController::class, 'update']);
+
+
+            //admin
+Route::get('/admin',[AuthController::class, 'show']);
+Route::delete('/delete',[])
 
 
