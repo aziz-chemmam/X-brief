@@ -43,7 +43,7 @@
                                         id="role">
 
                                         {{-- <option value="admin">admin</option> --}}
-                                        <option value="client">client</option>
+                                        <option value="admin">admin</option>
                                         <option value="organisateure">organisateure</option>
 
                                     </select>

@@ -28,7 +28,7 @@
 
 
                 <li>
-                    <a href=""
+                    <a href="/hello"
                         class="text-red-600 hover:text-red-900 block px-4 py-2.5 text-slate-800 font-semibold hover:bg-red-500 hover:text-white rounded-lg">logout</a>
 
                 </li>
@@ -57,7 +57,7 @@
 
 
                         <div class="flex ml-10">
-                            <a href=""
+                            <a href="{{ route('edit', $annonces->id) }}"
                                 class="h-9 py-2 px-14 mt-4 w-36 rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-green-900 hover:bg-green-700">Edit</a>
                             <form method="post" action="/delete/{{ $annonces->id}}">
                                 @csrf
@@ -154,6 +154,9 @@
                     </div>
                 </form>
             </div>
+
+             
+  
 
             <script>
                 const btn = document.getElementById('btn');

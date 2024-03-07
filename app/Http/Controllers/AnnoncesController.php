@@ -38,5 +38,24 @@ class AnnoncesController extends Controller
         return back();
     }
 
+    public function edit($id)
+    {
+        $annonce = Annonces::find($id);
+        return view('/organizer.editOrg', compact('annonce'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $annonce = Annonces::find($id);
+        $annonce->titre = $request->input('titre');
+        $annonce->description = $request->input('description');
+        $annonce->date = $request->input('date');
+        $annonce->place = $request->input('place');
+        $annonce->lieu = $request->input('lieu');
+        $annonce->categories = $request->input('categories');
+        $annonce->update();
+        return redirect('/annonce')->with('status', 'annonce Updated Successfully');
+    }
+
     
 }

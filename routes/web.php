@@ -35,12 +35,14 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 Route::post('/home',[AuthController::class,'login'])->name('home');
+Route::get('/hello', [AuthController::class, 'logout'])->name('logout');
 
 
             // annonce 
 Route::get('/annonce',[AnnoncesController::class, 'show']);
 Route::post('/annonce',[AnnoncesController::class, 'store']);
 Route::delete('/delete/{id}',[AnnoncesController::class,'delete']);
-
+Route::get('/edit/{id}', [AnnoncesController::class,'edit'])->name('edit');
+Route::post('/update/{id}', [AnnoncesController::class, 'update']);
 
 
