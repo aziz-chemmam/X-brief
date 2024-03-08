@@ -54,7 +54,7 @@ Route::delete('/delete/{id}',[AdminController::class, 'delete'])->name('delete')
 
 
         //categories
-Route::get('/categories',[categoriesController::class,'index']);
-route::post('/categories',[categoriesController::class,"store"])->name('addCategorie');
-
+Route::get('/categorie',[categoriesController::class,'index']);
+Route::post('/categorie',[categoriesController::class,'add'])->name('addCategorie');
+Route::delete('/categories/{id}',[categoriesController::class,'delete'])->name('deleteCategorie');
 

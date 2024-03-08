@@ -131,7 +131,8 @@
                             class=" p-2.5 w-96 text-sm text-gray-900 bg-emerald-950 rounded-lg border border-white focus:ring-blue-500 focus:border-blue-500 dark:bg-emerald-950 dark:border-white dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Write your thoughts here..."></textarea>
                     </div>
-
+                    @foreach ($categorie as $categories)
+                        
                     <div class="grid md:grid-cols-2 ml-[37%] md:gap-6">
                         <div class="relative z-0 w-full mb-5 group">
                             <label for="categories" class="block mb-2 ml-[20%]  text-sm font-bold text-white">
@@ -139,14 +140,12 @@
                             </label>
                             <select id="categories" name="categories"
                                 class="bg-emerald-950 border-0 border-b-2 border-gray-300  text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-blue-500 block w-full p-2.5 dark:border-white dark:descriptionholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-
-                                <option value="rent">RENT</option>
-                                <option value="seel">SELL</option>
+                                <option value="{{ $categories->name }}">{{ $categories->name }}</option>
                             </select>
                         </div>
 
                     </div>
-
+                    @endforeach
                     <div class="flex justify-center">
                         <button type="submit"
                             class="text-black bg-gray-200 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>

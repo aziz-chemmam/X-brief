@@ -8,16 +8,22 @@ use Illuminate\Http\Request;
 class categoriesController extends Controller
 {
     public function index(){
-        return view('admin.categorie');
+        $categorie = categories::all();
+        return view('admin.categorie', compact('categorie'));
+       
     }
 
-    public function store(Request $request){
+    public function add(Request $request){
         $categorie = new categories();
         $categorie->name = request('name');
         $categorie->save();
-        return view('admin.categorie') ;
+        return redirect('/categorie');
     }
 
-   
+    public function delete($id) {
+        categories::where('id',$id)->delete();
+        return back();
+
+    }
 
 }
