@@ -28,7 +28,7 @@
     <div class="relative z-0 w-full mb-5 ml-44 group">
         <input type="date" name="date" id="date"
             class="block py-2.5 px-0 w-96  text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer"
-            descriptionholder=" " required value="{{ $annonce->date }} " />
+            descriptionholder=" " required value="{{ $annonce->date }}" />
         <label for="lieu"
             class="peer-focus:font-medium absolute ml-[18%]  text-sm text-white duration-300 transform -translate-y-2 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white font-bold peer-focus:dark:text-white peer-descriptionholder-shown:scale-100 peer-descriptionholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Date
             d'evenement

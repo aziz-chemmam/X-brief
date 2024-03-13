@@ -16,7 +16,11 @@ class Annonces extends Model
         'date',
         'place',
         'lieu',
-        'categories',
+        'categorieId',
 
     ];
+
+    public function reserves(){
+        return $this->hasMany((reserve::class));    
+    }
 }

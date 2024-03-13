@@ -45,36 +45,34 @@
 
             <div id="cardContainer" class="flex flex-wrap w-full  gap-4">
                 @foreach ($annonce as $annonces)
-
-               
-                <div class="flex-shrink-0">
-                    <div
-                        class="bg-white shadow-[0_8px_12px_-6px_rgba(0,0,0,0.2)] border p-2 w-96 h-66 max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-                        <h3 class="text-lg font-semibold">{{ $annonces->titre }}</h3>
-                        <p class="mt-2 mb-3 text-sm text-gray-400"></p>
-                        <p class="mt-2 mb-2 text-sm text-black"></p>
-                        <p class="mt-2 mb-2 text-sm text-black"></p>
+                    <div class="flex-shrink-0">
+                        <div
+                            class="bg-white shadow-[0_8px_12px_-6px_rgba(0,0,0,0.2)] border p-2 w-96 h-66 max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
+                            <h3 class="text-lg font-semibold">{{ $annonces->titre }}</h3>
+                            <p class="mt-2 mb-3 text-sm text-gray-400"></p>
+                            <p class="mt-2 mb-2 text-sm text-black"></p>
+                            <p class="mt-2 mb-2 text-sm text-black"></p>
 
 
-                        <div class="flex ml-10">
-                            <a href="{{ route('edit', $annonces->id) }}"
-                                class="h-9 py-2 px-14 mt-4 w-36 rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-green-900 hover:bg-green-700">Edit</a>
-                            <form method="post" action="/delete/{{ $annonces->id}}">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"
-                                    class="px-6 py-2 w-36 mt-4 rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-red-700 hover:bg-red-600">Delete</button>
-                            </form>
+                            <div class="flex ml-10">
+                                <a href="{{ route('edit', $annonces->id) }}"
+                                    class="h-9 py-2 px-14 mt-4 w-36 rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-green-900 hover:bg-green-700">Edit</a>
+                                <form method="post" action="/delete/{{ $annonces->id }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                        class="px-6 py-2 w-36 mt-4 rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-red-700 hover:bg-red-600">Delete</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
 
 
             <div id="form"
                 class="absolute w-full h-full inset-0 bg-opacity-50 backdrop-filter backdrop-blur-md flex justify-center items-center scale-0 bg-gray-500 duration-300">
-                <form action="/annonce" method="POST" class="absolout mt-0  w-[700px] mx-auto bg-emerald-950  ">
+                <form action="/organisateur" method="POST" class="absolout mt-0  w-[700px] mx-auto bg-emerald-950  ">
                     @csrf
 
                     <div class="flex mr-9 mt-5 justify-end">
@@ -131,8 +129,7 @@
                             class=" p-2.5 w-96 text-sm text-gray-900 bg-emerald-950 rounded-lg border border-white focus:ring-blue-500 focus:border-blue-500 dark:bg-emerald-950 dark:border-white dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Write your thoughts here..."></textarea>
                     </div>
-                    @foreach ($categorie as $categories)
-                        
+
                     <div class="grid md:grid-cols-2 ml-[37%] md:gap-6">
                         <div class="relative z-0 w-full mb-5 group">
                             <label for="categories" class="block mb-2 ml-[20%]  text-sm font-bold text-white">
@@ -140,12 +137,14 @@
                             </label>
                             <select id="categories" name="categories"
                                 class="bg-emerald-950 border-0 border-b-2 border-gray-300  text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-blue-500 block w-full p-2.5 dark:border-white dark:descriptionholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option value="{{ $categories->name }}">{{ $categories->name }}</option>
+                                @foreach ($categories as $categorie)
+                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 
                     </div>
-                    @endforeach
+
                     <div class="flex justify-center">
                         <button type="submit"
                             class="text-black bg-gray-200 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
@@ -154,8 +153,8 @@
                 </form>
             </div>
 
-             
-  
+
+
 
             <script>
                 const btn = document.getElementById('btn');

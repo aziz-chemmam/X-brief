@@ -13,6 +13,8 @@ class categoriesController extends Controller
        
     }
 
+    
+
     public function add(Request $request){
         $categorie = new categories();
         $categorie->name = request('name');

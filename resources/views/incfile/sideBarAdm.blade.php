@@ -7,7 +7,7 @@
 		</a>
 		<div class="w-full px-2">
 			<div class="flex flex-col  items-center w-full mt-3 border-t border-gray-700">
-				<a class="flex items-center w-full h-12 px-3 mt-2 rounded  hever:bg-gray-700 hover:text-gray-300" href="/dashboard">
+				<a class="flex items-center w-full h-12 px-3 mt-2 rounded  hever:bg-gray-700 hover:text-gray-300" href="/admin">
 					<svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
 					</svg>
@@ -21,6 +21,12 @@
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
 					</svg>
 					<span class="ml-2 text-sm font-medium">categories</span>
+				</a>
+				<a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-red-500 hover:text-gray-300" href="/login">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 text-red-500  h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+					  </svg>
+					<span c lass="ml-2 text-sm font-medium">Logout</span>
 				</a>
 			</div>
 			

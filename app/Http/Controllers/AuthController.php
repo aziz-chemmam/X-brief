@@ -45,11 +45,11 @@ class AuthController extends Controller
     {
         $login = $request->only('email', 'password');
         if (Auth::attempt($login)) {
-            $user = Auth()->user();
+            $user = Auth::user();
             if ($user->role === 'admin') {
                 return redirect('/admin');
             } else if ($user->role === 'client') {
-                return view('/client.dashboard');
+                return redirect('/client');
             } else if ($user->role === 'organisateure') {
                 return redirect('/organisateur');
             }

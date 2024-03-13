@@ -44,13 +44,16 @@
           <td class="px-6 py-4 text-sm text-[#333]">
             {{ $users->created_at }}
           </td>
-          <td class="px-6 py-4 text-sm text-[#333]">
+          <td class=" flex gap-5 px-6 py-4 text-sm text-[#333]">
             <form action="/delete/{{ $users->id }}" method="post">
                 @csrf
                 @method('DELETE')
                 <button class="text-red-500 hover:text-red-700">Delete</button>
             </form>
+            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+
           </td>
+          
         </tr>
         
       </tbody>

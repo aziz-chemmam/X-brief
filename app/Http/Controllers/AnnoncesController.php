@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Annonces;
+use App\Models\categories;
 use Illuminate\Http\Request;
 
 class AnnoncesController extends Controller
@@ -18,18 +19,19 @@ class AnnoncesController extends Controller
         $annonce->date = request('date');
         $annonce->place = request('place');
         $annonce->lieu = request('lieu');
-        $annonce->categories = request('categories');
+        $annonce->categorieId = request('categories');
         $annonce->save();
-        return redirect('/annonce');
+        return redirect('/organisateur');
 
     }
-
+  
   
     public function show(Annonces $annonces)
     {
         $userId = auth()->user()->id;
+        $categories = categories::all();
         $annonce = annonces::where('userId', $userId)->get();
-        return view('organizer.dashboard', compact('annonce'));
+        return view('organizer.dashboard', compact('annonce', 'categories'));
     }
 
     public function delete($id)
@@ -52,10 +54,11 @@ class AnnoncesController extends Controller
         $annonce->date = $request->input('date');
         $annonce->place = $request->input('place');
         $annonce->lieu = $request->input('lieu');
-        $annonce->categories = $request->input('categories');
+        $annonce->categorieId = $request->input('categories');
         $annonce->update();
-        return redirect('/annonce')->with('status', 'annonce Updated Successfully');
+        return redirect('/organisateur')->with('status', 'annonce Updated Successfully');
     }
 
+  
     
 }

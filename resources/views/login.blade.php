@@ -12,12 +12,12 @@
         <div class="max-w-screen-xl h-[70vh] sm:m-10 bg-white rounded-lg shadow sm: flex justify-center flex-1">
             <div class="flex-1 bg-indigo-100 text-center hidden lg:flex">
                 <div class=" w-full h-full mt-28  bg-contain bg-center bg-no-repeat">
-                    <img src="{{ asset('image/taxi1.jpg') }}" alt="">
+                    <img src="{{ asset('image/event.gpj.jpg') }}" alt="">
                 </div>
             </div>
-            <div class="mt-[4rem] lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+            <div class=" lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
                 <div>
-                    <p class="text-center text-violet-400 font-bold text-[1.25rem]">MY-TAXI</p>
+                    <img src="{{ asset('image/Evento.png') }}" class="h-36 w-48 ml-[30%] " alt="">
                 </div>
                 @if (session('success'))
                 <div id="success-message" class="bg-red-600 rounded-md  fixed ml-24 mt-96  top-50 z-50 text-white p-4 text-center animate-bounce mb-4">

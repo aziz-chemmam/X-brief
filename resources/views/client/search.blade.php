@@ -35,45 +35,37 @@
 
             </ul>
         </nav>
-
-
-
-
-       <form action="/search"  method="get">
-        <div class= 'flex max-w-md mx-auto'>
+        <div class= 'max-w-md mx-auto'>
             <div class="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
                 <div class="grid place-items-center h-full w-12 text-gray-300">
-                   
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
                 </div>
         
-                <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text" name="search" placeholder="Search something.." /> 
+                <input
+                class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
+                type="text"
+                id="search"
+                placeholder="Search something.." /> 
             </div>
-            <BUtton type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 text-gray-300 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                  </svg>
-                  
-            </BUtton>
         </div>
-
-       </form>
       
         
             <div id="cardContainer" class="flex flex-wrap w-full mt-36 ml-10 gap-8">
-                @foreach ($annonce as $annonces)
+                @foreach ($annonces as $annonce)
                     <div class="flex-shrink-0">
                         <div
                             class="bg-white shadow-[0_8px_12px_-6px_rgba(0,0,0,0.2)] border p-2 w-96 h-66 max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-                            <h3 class="text-lg font-semibold">{{ $annonces->titre }}</h3>
-                            <p class="mt-2 mb-3 text-sm text-gray-400">jnbhgv</p>
-                            <p class="mt-2 mb-2 text-sm text-black">njhbgvcf</p>
-                            <p class="mt-2 mb-2 text-sm text-black">bgvcfdx</p>
+                            <h3 class="text-lg font-semibold">{{ $annonce->titre }}</h3>
+                            <p class="mt-2 mb-3 text-sm text-gray-400">{{ $annonce->description }}</p>
+                            <p class="mt-2 mb-2 text-sm text-black">{{ $annonce->date }}</p>
+                            <p class="mt-2 mb-2 text-sm text-black">{{ $annonce->lieu }}</p>
 
 
                             <div class="flex  ml-10">
                                 <form method="post" action="{{ route('reservation.create') }}">
                                     @csrf
-                                    <input type="hidden" name="annonce" value="{{ $annonces->id }}" />
                                     <button type="submit"
                                         class="px-6 py-2 w-36 mt-4 rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-blue-700 hover:bg-blue-600">Reserve</button>
                                 </form>
@@ -90,3 +82,4 @@
 
 
           
+
